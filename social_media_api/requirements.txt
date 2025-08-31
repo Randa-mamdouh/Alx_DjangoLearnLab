@@ -1,0 +1,22 @@
+# Django Social Media API Requirements
+
+# Core Django Framework
+Django==5.2.4
+
+# Django REST Framework for API functionality
+djangorestframework==3.16.0
+
+# Image processing for profile pictures
+Pillow==11.3.0
+
+# ASGI support for Django
+asgiref==3.9.1
+
+# SQL parsing utilities
+sqlparse==0.5.3
+
+# Timezone data
+tzdata==2025.2
+
+# Python timezone utilities
+pytz==2025.2
