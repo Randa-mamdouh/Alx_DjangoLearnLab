@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Social Media API{% endblock %}
+
+{% block content %}
+<div class="card text-center">
+    <h1 style="color: #667eea; margin-bottom: 1rem;">Welcome to Social Media API</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
+        Connect, share, and discover amazing content with our modern social media platform.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/accounts/register/" class="btn">Get Started</a>
+        <a href="/accounts/login/" class="btn btn-secondary">Login</a>
+        <a href="/accounts/profile/" class="btn btn-success">My Profile</a>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">🚀 Features</h3>
+        <ul style="text-align: left; line-height: 1.8;">
+            <li>User Registration & Authentication</li>
+            <li>Profile Management</li>
+            <li>Follow/Unfollow Users</li>
+            <li>Token-based Security</li>
+            <li>RESTful API Design</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">📱 API Endpoints</h3>
+        <ul style="text-align: left; line-height: 1.8; font-family: monospace; font-size: 0.9rem;">
+            <li>POST /accounts/register/</li>
+            <li>POST /accounts/login/</li>
+            <li>GET/PUT /accounts/profile/</li>
+            <li>POST /accounts/follow/&lt;id&gt;/</li>
+            <li>POST /accounts/unfollow/&lt;id&gt;/</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">🔧 Technology Stack</h3>
+        <ul style="text-align: left; line-height: 1.8;">
+            <li>Django REST Framework</li>
+            <li>Token Authentication</li>
+            <li>SQLite Database</li>
+            <li>Modern CSS & JavaScript</li>
+            <li>Responsive Design</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <h3 style="color: #667eea; margin-bottom: 1rem;">🌟 Quick Start Guide</h3>
+    <div class="grid">
+        <div>
+            <h4>1. Register</h4>
+            <p>Create your account with username, email, and password. Add a bio and profile picture to personalize your profile.</p>
+        </div>
+        <div>
+            <h4>2. Login</h4>
+            <p>Sign in with your credentials to get an authentication token for secure API access.</p>
+        </div>
+        <div>
+            <h4>3. Explore</h4>
+            <p>View and edit your profile, follow other users, and start building your social network.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Check if user is already logged in
+document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('authToken');
+    const username = localStorage.getItem('username');
+    
+    if (token && username) {
+        // Update navbar or show user info
+        const navbar = document.querySelector('.navbar nav');
+        if (navbar) {
+            navbar.innerHTML += `<span style="color: #667eea; font-weight: bold;">Welcome, ${username}!</span>`;
+        }
+    }
+});
+</script>
+{% endblock %}
